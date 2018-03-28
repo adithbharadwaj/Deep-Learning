@@ -8,7 +8,6 @@ mnist = input_data.read_data_sets("mnist_data/", one_hot= True)
 # one_hot stands for the nature of output. i,e we have 10 classes and if one_hot is true, 
 # output is of the form [0,0,1,0,0,0,0,0,0,0], where 1 indicated the ans, which, in this case is 2 (0-9) 		
 
-
 n_hidden_1 = 500  # number of neurons in the hidden layer 1
 n_hidden_2 = 500  # nuber of neurons in hidden layer 2
 n_hidden_3 = 500  # neurons in hidden layer 3.
@@ -19,7 +18,6 @@ n_classes = 10  # number of outputs. i.e number of neurons in the output layer
 x = tf.placeholder('float', [None, 784]) # placeholder for the input which is in the form of a 28x28 matrix that has been 
 										 # flattened out into a single dimentional 784 sized tensor. 
 y = tf.placeholder('float', [None, 10]) # for labels.
-
 
 def forward_propagation(data):
 
@@ -55,7 +53,6 @@ def forward_propagation(data):
 	output = tf.add(tf.matmul(l3, output_layer['weights']), output_layer['biases'])
 
 	return output
-
 
 def train(x):
 
